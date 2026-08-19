@@ -7,12 +7,13 @@ requirements:
     description: A doctor can identify patients who require priority examination.
     acceptanceCriteria:
       - A doctor can see which patients require priority examination.
-      - Patients who require priority examination are distinguishable from patients who do not.
+      - Priority patients are visually distinguishable from non-priority patients.
 
   - id: WD-002
     title: View clinical context for examination order
     description: A doctor can view the clinical context needed to make an independent decision about examination order. This context includes the patient name, ward, diagnosis, severity, and a short description of the current condition.
     acceptanceCriteria:
+      - All patients assigned to a ward are displayed within that ward.
       - For each patient, a doctor can view the patient name.
       - For each patient, a doctor can view the ward.
       - For each patient, a doctor can view the diagnosis.
@@ -44,13 +45,17 @@ requirements:
     title: Determine a patient's current ward
     description: A doctor can determine which ward a patient is currently assigned to.
     acceptanceCriteria:
+      - All wards are displayed.
+      - All patients assigned to a ward are displayed within that ward.
       - A doctor can see the ward currently assigned to a patient.
 
   - id: WD-007
     title: View the number of priority patients in each ward
     description: A doctor can see the number of priority patients in each ward.
     acceptanceCriteria:
-      - For each ward, a doctor can see how many patients in that ward require priority examination.
+      - Wards with zero priority patients are still displayed.
+      - Every ward displays its current priority patient count, including zero.
+      - A doctor can quickly identify which wards have priority patients from the displayed counts.
 
   - id: WD-008
     title: Persist patient priority and clinical information
