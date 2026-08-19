@@ -1,0 +1,78 @@
+name: ward-dashboard
+description: Learning project for a hospital Ward Dashboard built with fictional patient data.
+
+requirements:
+  - id: WD-001
+    title: Identify patients requiring priority examination
+    description: A doctor can identify patients who require priority examination.
+    acceptanceCriteria:
+      - A doctor can see which patients require priority examination.
+      - Patients who require priority examination are distinguishable from patients who do not.
+
+  - id: WD-002
+    title: View clinical context for examination order
+    description: A doctor can view the clinical context needed to make an independent decision about examination order. This context includes the patient name, ward, diagnosis, severity, and a short description of the current condition.
+    acceptanceCriteria:
+      - For each patient, a doctor can view the patient name.
+      - For each patient, a doctor can view the ward.
+      - For each patient, a doctor can view the diagnosis.
+      - For each patient, a doctor can view the severity.
+      - For each patient, a doctor can view a short description of the current condition.
+
+  - id: WD-003
+    title: Mark a patient as requiring priority examination
+    description: A doctor can manually mark a patient as requiring priority examination.
+    acceptanceCriteria:
+      - A doctor can manually assign priority examination status to a patient.
+      - After this action, the patient is identified as requiring priority examination.
+
+  - id: WD-004
+    title: Remove priority status from a patient
+    description: A doctor can manually remove the priority status from a patient.
+    acceptanceCriteria:
+      - A doctor can manually remove priority examination status from a patient.
+      - After this action, the patient is no longer identified as requiring priority examination.
+
+  - id: WD-005
+    title: Do not automatically determine examination order among priority patients
+    description: The system must not automatically determine which priority patient should be examined first. The doctor makes the clinical decision.
+    acceptanceCriteria:
+      - The system does not automatically decide which priority patient should be examined first.
+      - The doctor makes the clinical decision about examination order.
+
+  - id: WD-006
+    title: Determine a patient's current ward
+    description: A doctor can determine which ward a patient is currently assigned to.
+    acceptanceCriteria:
+      - A doctor can see the ward currently assigned to a patient.
+
+  - id: WD-007
+    title: View the number of priority patients in each ward
+    description: A doctor can see the number of priority patients in each ward.
+    acceptanceCriteria:
+      - For each ward, a doctor can see how many patients in that ward require priority examination.
+
+  - id: WD-008
+    title: Persist patient priority and clinical information
+    description: Changes to patient priority and clinical information persist after page reload or reopening the application.
+    acceptanceCriteria:
+      - After a page reload, saved patient priority is still available.
+      - After a page reload, saved clinical information is still available.
+      - After reopening the application, saved patient priority is still available.
+      - After reopening the application, saved clinical information is still available.
+
+  - id: WD-009
+    title: Share current patient information between doctors
+    description: Current patient information is shared between doctors and must not depend on storage in a specific browser.
+    acceptanceCriteria:
+      - Current patient information is shared between doctors.
+      - Current patient information does not depend on storage in a specific browser.
+
+outOfScope:
+  - Medication prescriptions
+  - Nurse workflows
+  - Doctor presence tracking
+  - Automatic priority determination
+  - Priority review reminders
+  - Temperature history and charts
+  - Patient condition history
